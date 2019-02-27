@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Numerics;
-using System.Text;
+﻿using System.Numerics;
 
 namespace Neo.SmartContract.Framework.Services.Neo
 {
@@ -14,11 +11,11 @@ namespace Neo.SmartContract.Framework.Services.Neo
         public static extern byte[] Call(string method, byte[] assetId, byte[] parameter);
 
         [Syscall("Zoro.NativeNEP5.Call")]
-        public static extern byte[] Call(string method, byte[] assetId, byte[] sender, byte[] to, BigInteger amount);
+        public static extern bool Call(string method, byte[] assetId, byte[] sender, byte[] to, BigInteger amount);
 
         [Syscall("Zoro.NativeNEP5.Call")]
         public static extern byte[] Call(string method, object[] parameters);
-        
+
         [Syscall("Zoro.NativeNEP5.GetTransferLog")]
         public static extern TransferLog GetTransferLog(byte[] assetId, byte[] txid);
 
